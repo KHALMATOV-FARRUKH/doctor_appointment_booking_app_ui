@@ -11,7 +11,7 @@ class WelcomeScreen extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -28,7 +28,7 @@ class WelcomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Image.asset("assets/images/doctors.png"),
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 10),
             const Text(
               "Doctors Online",
               style: TextStyle(
