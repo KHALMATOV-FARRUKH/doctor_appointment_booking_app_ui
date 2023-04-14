@@ -25,10 +25,10 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.only(top: 35),
               child: Image.asset("assets/images/doctors.png"),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 50),
             const Text(
               "Doctors Online",
               style: TextStyle(
