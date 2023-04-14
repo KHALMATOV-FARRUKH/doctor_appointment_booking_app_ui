@@ -1,4 +1,5 @@
 import 'package:doctor_appointment_booking_app_ui/colors.dart';
+import 'package:doctor_appointment_booking_app_ui/widgets/doctors_section.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -96,10 +97,91 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Search here...",
+                              hintStyle: TextStyle(
+                                color: Colors.black.withOpacity(0.5),
+                              ),
+                              prefixIcon: Icon(
+                                Icons.search,
+                                size: 25,
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Text(
+                      "Categories",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: bColor.withOpacity(0.7),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  Container(
+                    height: 100,
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 15),
+                              height: 60,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF2F8FF),
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: sdColor,
+                                    blurRadius: 4,
+                                    spreadRadius: 2,
+                                  ),
+                                ],
+                              ),
+                              child: Center(
+                                child: catIcons[index],
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              catNames[index],
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: bColor.withOpacity(0.7),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: catNames.length,
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Text(
+                      "Recommended Doctors",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: bColor.withOpacity(0.7),
+                      ),
+                    ),
+                  ),
+                  DoctorsSection(),
                 ],
               ),
             ),
